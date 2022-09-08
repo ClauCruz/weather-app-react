@@ -1,0 +1,95 @@
+.Weather {
+  max-width: 550px;
+  border: 2px solid #e6dee9;
+  padding: 10px;
+  border-radius: 8px;
+  background: linear-gradient(to top, #bdc2e8 0%, #bdc2e8 1%, #e6dee9 100%);
+  font-family: "Fira Sans";
+}
+
+body {
+  text-align: center;
+
+  margin: 80px 500px 80px 500px;
+}
+
+.search-bar {
+  display: block;
+  margin-top: 10px;
+  margin-left: 35px;
+  padding-left: 10px;
+  border: none;
+  border-radius: 4px;
+  height: 31px;
+  width: 325px;
+  background: #f1f1f1;
+}
+
+.location {
+  background: #a393eb;
+  border-color: #a393eb;
+  color: white;
+  box-shadow: 0 2px #e6dee9;
+  border-radius: 4px;
+  position: relative;
+  top: -30px;
+  right: -135px;
+}
+
+.location:hover {
+  background-color: #5e63b6;
+  border-color: #5e63b6;
+  color: white;
+  transition: all 200ms ease-in-out;
+}
+
+.current-city {
+  font-size: 55px;
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+.current-date {
+  margin-top: -10px;
+}
+
+.current-temp {
+  display: inline;
+  font-size: 65px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.units {
+  font-size: 16px;
+  position: relative;
+  top: 10px;
+}
+
+.units .active {
+  text-decoration: none;
+  color: black;
+  cursor: default;
+}
+
+.week-forecast {
+  font-size: 16px;
+  text-align: center;
+  margin-top: 0;
+}
+
+.current-min {
+  opacity: 0.6;
+}
+
+.forecast-min {
+  opacity: 0.6;
+}
+
+.git-link {
+  display: block;
+  margin-top: 10px;
+  text-align: left;
+}
