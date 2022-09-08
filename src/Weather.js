@@ -39,37 +39,53 @@ export default function Weather() {
       <div class="row">
         <div class="col-2">
           <div>Wed</div>
-          <img src="https://openweathermap.org/img/wn/04d@2x.png"></img>
+          <img
+            src="https://openweathermap.org/img/wn/04d@2x.png"
+            width={50}
+          ></img>
           <div>24° 23°</div>
         </div>
         <div class="col-2">
           <div>Wed</div>
-          <img src="https://openweathermap.org/img/wn/04d@2x.png"></img>
+          <img
+            src="https://openweathermap.org/img/wn/04d@2x.png"
+            width={50}
+          ></img>
           <div>24° 23°</div>
         </div>
         <div class="col-2">
           <div>Wed</div>
-          <img src="https://openweathermap.org/img/wn/04d@2x.png"></img>
+          <img
+            src="https://openweathermap.org/img/wn/04d@2x.png"
+            width={50}
+          ></img>
           <div>24° 23°</div>
         </div>
         <div class="col-2">
           <div>Wed</div>
-          <img src="https://openweathermap.org/img/wn/04d@2x.png"></img>
+          <img
+            src="https://openweathermap.org/img/wn/04d@2x.png"
+            width={50}
+          ></img>
           <div>24° 23°</div>
         </div>
         <div class="col-2">
           <div>Wed</div>
-          <img src="https://openweathermap.org/img/wn/04d@2x.png"></img>
+          <img
+            src="https://openweathermap.org/img/wn/04d@2x.png"
+            width={50}
+          ></img>
           <div>24° 23°</div>
         </div>
         <div class="col-2">
           <div>Wed</div>
-          <img src="https://openweathermap.org/img/wn/04d@2x.png"></img>
+          <img
+            src="https://openweathermap.org/img/wn/04d@2x.png"
+            width={50}
+          ></img>
           <div>24° 23°</div>
         </div>
       </div>
-      <br />
-      <br />
       <small className="git-link">
         <a href="https://github.com/ClauCruz/weather-app-react" target="_blank">
           Open-source code

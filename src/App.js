@@ -6,8 +6,10 @@ import Weather from "./Weather";
 export default function App() {
   return (
     <div className="App">
-      <div className="weather-app">
-        <Weather />
+      <div className="container">
+        <div className="weather-app">
+          <Weather />
+        </div>
       </div>
     </div>
   );

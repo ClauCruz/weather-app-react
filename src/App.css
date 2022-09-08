@@ -1,16 +1,8 @@
-.Weather {
-  max-width: 550px;
-  border: 2px solid #e6dee9;
-  padding: 10px;
-  border-radius: 8px;
+.weather-app {
   background: linear-gradient(to top, #bdc2e8 0%, #bdc2e8 1%, #e6dee9 100%);
-  font-family: "Fira Sans";
-}
-
-body {
-  text-align: center;
-
-  margin: 80px 500px 80px 500px;
+  border: 2px solid #e6dee9;
+  border-radius: 8px;
+  padding: 10px;
 }
 
 .search-bar {
@@ -33,7 +25,7 @@ body {
   border-radius: 4px;
   position: relative;
   top: -30px;
-  right: -135px;
+  right: -165px;
 }
 
 .location:hover {
@@ -92,4 +84,7 @@ a {
   display: block;
   margin-top: 10px;
   text-align: left;
+  position: relative;
+  top: 35px;
+  left: -8px;
 }
