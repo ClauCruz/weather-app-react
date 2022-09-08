@@ -71,7 +71,10 @@ export default function Weather() {
       <br />
       <br />
       <small className="git-link">
-        <a href="#">Open-source code</a> by Claudia Cruz
+        <a href="https://github.com/ClauCruz/weather-app-react" target="_blank">
+          Open-source code
+        </a>{" "}
+        by Claudia Cruz
       </small>
     </div>
   );
