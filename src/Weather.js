@@ -1,11 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 import "./App.css";
 
 export default function Weather() {
+  let [city, setCity] = useState(" ");
+  let [weather, setWeather] = useState(" ");
+
+  function inputCity(event) {
+    setCity(event.target.value);
+  }
+
+  function showWeather(response) {
+    if (!response) return;
+    setWeather({
+      temperature: Math.round(response.data.main.temp),
+      description: response.data.weather[0].description,
+      humidity: response.data.main.humidity,
+      wind: response.data.wind.speed,
+      icon: response.data.weather[0].icon,
+    });
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    let apiKey = "86cb3e7be0356580c7382daac8e4cf19";
+    let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(apiURL).then(showWeather);
+  }
+
   return (
     <div>
-      <form>
-        <input type="text" placeholder="Search" className="search-bar"></input>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          placeholder="Search"
+          className="search-bar"
+          onChange={inputCity}
+        ></input>
       </form>
       <button className="location">My location</button>
       <h1 className="current-city">Guadalajara</h1>
@@ -15,7 +46,7 @@ export default function Weather() {
           src="	https://openweathermap.org/img/wn/04d@2x.png"
           class="clear-fix"
         ></img>
-        <h2 className="current-temp">23</h2>
+        <h2 className="current-temp">{weather.temperature}</h2>
         <span className="units">
           <a href="#">C°</a> | <a href="#">F°</a>
         </span>
