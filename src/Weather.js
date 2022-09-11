@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./App.css";
+import CurrentDate from "./CurrentDate";
 
 export default function Weather() {
   let [city, setCity] = useState(" ");
@@ -18,6 +19,7 @@ export default function Weather() {
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
       icon: response.data.weather[0].icon,
+      date: new Date(response.data.dt * 1000),
     });
   }
 
@@ -40,7 +42,9 @@ export default function Weather() {
       </form>
       <button className="location">My location</button>
       <h1 className="current-city">Guadalajara</h1>
-      <div className="current-date">Tue, 6 19:25</div>
+      <div className="current-date">
+        <CurrentDate date={weather.date} />
+      </div>
       <div class="d-flex justify-content-center">
         <img
           src="	https://openweathermap.org/img/wn/04d@2x.png"
