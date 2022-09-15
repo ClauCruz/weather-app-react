@@ -2,15 +2,10 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./App.css";
 import CurrentDate from "./CurrentDate";
-import CurrentCity from "./CurrentCity";
 
-export default function Weather() {
-  let [city, setCity] = useState(" ");
+export default function Weather(props) {
+  let [city, setCity] = useState(props.defaultCity);
   let [weather, setWeather] = useState(" ");
-
-  function inputCity(event) {
-    setCity(event.target.value);
-  }
 
   function showWeather(response) {
     if (!response) return;
@@ -22,11 +17,23 @@ export default function Weather() {
       wind: response.data.wind.speed,
       icon: response.data.weather[0].icon,
       date: new Date(response.data.dt * 1000),
+      city: response.data.name,
     });
+  }
+
+  function search() {
+    let apiKey = "86cb3e7be0356580c7382daac8e4cf19";
+    let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(apiURL).then(showWeather);
   }
 
   function handleSubmit(event) {
     event.preventDefault();
+    search();
+  }
+
+  function inputCity(event) {
+    setCity(event.target.value);
   }
 
   if (weather.ready) {
@@ -41,7 +48,7 @@ export default function Weather() {
           ></input>
         </form>
         <button className="location">My location</button>
-        <h1 className="current-city">Guadalajara</h1>
+        <h1 className="current-city">{weather.city}</h1>
         <div className="current-date">
           <CurrentDate date={weather.date} />
         </div>
@@ -141,9 +148,6 @@ export default function Weather() {
       </div>
     );
   } else {
-    let city = "Guadalajara";
-    let apiKey = "86cb3e7be0356580c7382daac8e4cf19";
-    let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-    axios.get(apiURL).then(showWeather);
+    search();
   }
 }
