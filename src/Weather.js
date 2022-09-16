@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./App.css";
 import CurrentDate from "./CurrentDate";
+import WeatherUnits from "./WeatherUnits";
 
 export default function Weather(props) {
   let [city, setCity] = useState(props.defaultCity);
@@ -58,10 +59,7 @@ export default function Weather(props) {
             alt={weather.description}
             class="clear-fix"
           ></img>
-          <h2 className="current-temp">{weather.temperature}</h2>
-          <span className="units">
-            <a href="#">C°</a> | <a href="#">F°</a>
-          </span>
+          <WeatherUnits metric={weather.temperature} />
         </div>
         <div class="container">
           <div class="row">
