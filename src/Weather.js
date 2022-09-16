@@ -3,6 +3,7 @@ import axios from "axios";
 import "./App.css";
 import CurrentDate from "./CurrentDate";
 import WeatherUnits from "./WeatherUnits";
+import Forecast from "./Forecast";
 
 export default function Weather(props) {
   let [city, setCity] = useState(props.defaultCity);
@@ -77,62 +78,7 @@ export default function Weather(props) {
         </div>
         <br />
         <br />
-        <div class="row">
-          <div class="col-2">
-            <div>Wed</div>
-            <img
-              src="https://openweathermap.org/img/wn/04d@2x.png"
-              alt="weather-icon"
-              width={50}
-            ></img>
-            <div>24° 23°</div>
-          </div>
-          <div class="col-2">
-            <div>Wed</div>
-            <img
-              src="https://openweathermap.org/img/wn/04d@2x.png"
-              alt="weather-icon"
-              width={50}
-            ></img>
-            <div>24° 23°</div>
-          </div>
-          <div class="col-2">
-            <div>Wed</div>
-            <img
-              src="https://openweathermap.org/img/wn/04d@2x.png"
-              alt="weather-icon"
-              width={50}
-            ></img>
-            <div>24° 23°</div>
-          </div>
-          <div class="col-2">
-            <div>Wed</div>
-            <img
-              src="https://openweathermap.org/img/wn/04d@2x.png"
-              alt="weather-icon"
-              width={50}
-            ></img>
-            <div>24° 23°</div>
-          </div>
-          <div class="col-2">
-            <div>Wed</div>
-            <img
-              src="https://openweathermap.org/img/wn/04d@2x.png"
-              alt="weather-icon"
-              width={50}
-            ></img>
-            <div>24° 23°</div>
-          </div>
-          <div class="col-2">
-            <div>Wed</div>
-            <img
-              src="https://openweathermap.org/img/wn/04d@2x.png"
-              alt="weather-icon"
-              width={50}
-            ></img>
-            <div>24° 23°</div>
-          </div>
-        </div>
+        <Forecast />
         <small className="git-link">
           <a
             href="https://github.com/ClauCruz/weather-app-react"
