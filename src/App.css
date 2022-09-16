@@ -57,7 +57,12 @@ a {
 .units {
   font-size: 16px;
   position: relative;
-  top: 10px;
+  top: -38px;
+}
+
+.main-icon {
+  position: relative;
+  top: -4px;
 }
 
 .units .active {

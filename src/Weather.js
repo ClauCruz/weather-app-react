@@ -57,7 +57,7 @@ export default function Weather(props) {
           <img
             src={weather.icon}
             alt={weather.description}
-            class="clear-fix"
+            class="clear-fix main-icon"
           ></img>
           <WeatherUnits metric={weather.temperature} />
         </div>
