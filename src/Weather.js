@@ -15,7 +15,7 @@ export default function Weather(props) {
       description: response.data.weather[0].description,
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
-      icon: response.data.weather[0].icon,
+      icon: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       date: new Date(response.data.dt * 1000),
       city: response.data.name,
     });
@@ -54,8 +54,8 @@ export default function Weather(props) {
         </div>
         <div class="d-flex justify-content-center">
           <img
-            src="	https://openweathermap.org/img/wn/04d@2x.png"
-            alt="weather-icon"
+            src={weather.icon}
+            alt={weather.description}
             class="clear-fix"
           ></img>
           <h2 className="current-temp">{weather.temperature}</h2>
