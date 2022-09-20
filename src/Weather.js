@@ -13,6 +13,7 @@ export default function Weather(props) {
     if (!response) return;
     setWeather({
       ready: true,
+      coordinates: response.date.coord,
       temperature: Math.round(response.data.main.temp),
       description: response.data.weather[0].description,
       humidity: response.data.main.humidity,
@@ -78,7 +79,7 @@ export default function Weather(props) {
         </div>
         <br />
         <br />
-        <Forecast />
+        <Forecast coordinates={weather.coordinates} />
         <small className="git-link">
           <a
             href="https://github.com/ClauCruz/weather-app-react"
