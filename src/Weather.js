@@ -3,6 +3,7 @@ import axios from "axios";
 import "./App.css";
 import CurrentDate from "./CurrentDate";
 import WeatherUnits from "./WeatherUnits";
+import WeatherIcon from "./WeatherIcon";
 import Forecast from "./Forecast";
 
 export default function Weather(props) {
@@ -13,12 +14,14 @@ export default function Weather(props) {
     if (!response) return;
     setWeather({
       ready: true,
-      coordinates: response.date.coord,
+      coordinates: response.data.coord,
       temperature: Math.round(response.data.main.temp),
       description: response.data.weather[0].description,
+      min: props.data.temp.min,
+      max: props.data.temp.max,
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
-      icon: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      icon: response.data.weather[0].icon,
       date: new Date(response.data.dt * 1000),
       city: response.data.name,
     });
@@ -56,11 +59,7 @@ export default function Weather(props) {
           <CurrentDate date={weather.date} />
         </div>
         <div class="d-flex justify-content-center">
-          <img
-            src={weather.icon}
-            alt={weather.description}
-            class="clear-fix main-icon"
-          ></img>
+          <WeatherIcon code={weather.icon} alt={weather.description} />
           <WeatherUnits metric={weather.temperature} />
         </div>
         <div class="container">
@@ -72,7 +71,10 @@ export default function Weather(props) {
         </div>
         <div class="container">
           <div class="row">
-            <div class="col-4">24° 23°</div>
+            <div class="col-4">
+              <span className="max-temp">{weather.min}°</span>
+              <span className="min-temp">{weather.max}°</span>
+            </div>
             <div class="col-4">{weather.wind} km/h</div>
             <div class="col-4">{weather.humidity}%</div>
           </div>
