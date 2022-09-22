@@ -17,8 +17,8 @@ export default function Weather(props) {
       coordinates: response.data.coord,
       temperature: Math.round(response.data.main.temp),
       description: response.data.weather[0].description,
-      min: props.data.temp.min,
-      max: props.data.temp.max,
+      min: Math.round(response.data.main.temp_min),
+      max: Math.round(response.data.main.temp_max),
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
       icon: response.data.weather[0].icon,
@@ -58,6 +58,7 @@ export default function Weather(props) {
         <div className="current-date">
           <CurrentDate date={weather.date} />
         </div>
+        <br />
         <div class="d-flex justify-content-center">
           <WeatherIcon code={weather.icon} alt={weather.description} />
           <WeatherUnits metric={weather.temperature} />
@@ -73,13 +74,13 @@ export default function Weather(props) {
           <div class="row">
             <div class="col-4">
               <span className="max-temp">{weather.min}°</span>
+              <span> </span>
               <span className="min-temp">{weather.max}°</span>
             </div>
             <div class="col-4">{weather.wind} km/h</div>
             <div class="col-4">{weather.humidity}%</div>
           </div>
         </div>
-        <br />
         <br />
         <Forecast coordinates={weather.coordinates} />
         <small className="git-link">

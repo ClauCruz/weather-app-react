@@ -38,7 +38,8 @@
 .current-city {
   font-size: 55px;
   font-weight: bold;
-  margin-top: 8px;
+  margin-top: 6px;
+  margin-bottom: 13px;
 }
 
 .current-date {
@@ -57,7 +58,7 @@ a {
 .units {
   font-size: 16px;
   position: relative;
-  top: -38px;
+  top: -36px;
 }
 
 .main-icon {
@@ -77,11 +78,7 @@ a {
   margin-top: 0;
 }
 
-.current-min {
-  opacity: 0.6;
-}
-
-.forecast-min {
+.min-temp {
   opacity: 0.6;
 }
 
