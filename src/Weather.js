@@ -62,7 +62,14 @@ export default function Weather(props) {
         </div>
 
         <div class="d-flex justify-content-center">
-          <WeatherIcon code={weather.icon} alt={weather.description} />
+          <div className="main-icon">
+            <WeatherIcon
+              code={weather.icon}
+              alt={weather.description}
+              size={60}
+              color={"#5e63b6"}
+            />
+          </div>
           <WeatherUnits metric={weather.temperature} />
         </div>
         <div class="container">

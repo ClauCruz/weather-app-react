@@ -40,7 +40,6 @@
 .current-city {
   font-size: 55px;
   font-weight: bold;
-  margin-top: 6px;
   margin-bottom: 11px;
 }
 
@@ -64,8 +63,7 @@ a {
 }
 
 .main-icon {
-  position: relative;
-  top: -4px;
+  margin-top: 20px;
 }
 
 .units .active {
