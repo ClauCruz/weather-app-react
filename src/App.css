@@ -23,6 +23,8 @@
   color: white;
   box-shadow: 0 2px #e6dee9;
   border-radius: 4px;
+  padding-left: 15px;
+  padding-right: 15px;
   position: relative;
   top: -30px;
   right: -165px;

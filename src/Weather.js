@@ -48,12 +48,14 @@ export default function Weather(props) {
         <form onSubmit={handleSubmit}>
           <input
             type="text"
-            placeholder="Search"
+            placeholder="Enter a city..."
             className="search-bar"
             onChange={inputCity}
           ></input>
         </form>
-        <button className="location">My location</button>
+        <button className="location" onClick={handleSubmit}>
+          Search
+        </button>
         <h1 className="current-city">{weather.city}</h1>
         <div className="current-date">
           <CurrentDate date={weather.date} />
