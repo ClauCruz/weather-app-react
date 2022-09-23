@@ -58,7 +58,7 @@ export default function Weather(props) {
         <div className="current-date">
           <CurrentDate date={weather.date} />
         </div>
-        <br />
+
         <div class="d-flex justify-content-center">
           <WeatherIcon code={weather.icon} alt={weather.description} />
           <WeatherUnits metric={weather.temperature} />
